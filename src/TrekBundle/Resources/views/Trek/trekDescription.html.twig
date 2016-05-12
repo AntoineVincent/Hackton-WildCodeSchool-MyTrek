@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	
+	<div>
+		<div id="map" style="height:250px; width:800px"></div>
+	  <div id="elevation_chart" style="height:250px; width:800px"></div>
+		<script src="{{ asset('js/velo_intermediaire_ceyresteLaCiotat.js') }}"></script>
+	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHW8RuM2GARduKFEHWK-yItzoWymc81CU&signed_in=true&callback=initMap" async defer></script>
+	</div>
+
+	{# <script src="{{ asset('js/pedestre_difficile_tourDuMontBlanc.js') }}"></script>
+	<div id="googleMap" style="width:600px;height:380px;"></div>
+
+	<div id="profil" style="width:600px;height:380px;">
+		<img src="{{ asset('img/tourDuMontBlanc.png') }}">
+	</div>#}
+
+{% endblock %}

@@ -30,10 +30,14 @@ user_homepage:
     path:     /
     defaults: { _controller: AppBundle:Homepage:homepage }
 
-trek:
-    path:     /trek/{niveau}
-    defaults: { _controller: TrekBundle:Trek:trek }
+# trek:
+#     path:     /trek/{niveau}
+#     defaults: { _controller: TrekBundle:Trek:trek }
 
-trek_detail:
-    path:     /trek/{idTrek}
-    defaults: { _controller: AppBundle:Trek:trekDetail }
+# trek_detail:
+#     path:     /trek/{idTrek}
+#     defaults: { _controller: TrekBundle:Trek:trekDetail }
+
+trek_testmap:
+    path:     /trek/map
+    defaults: { _controller: TrekBundle:Trek:map }
