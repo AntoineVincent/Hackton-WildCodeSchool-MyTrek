@@ -30,3 +30,8 @@ li>a:hover {
 .title {
 	margin-top: 20px;
 }
+#fond_profil {
+	height: 400px;
+	background: white;
+	box-shadow: 8px 8px 15px black;
+}
