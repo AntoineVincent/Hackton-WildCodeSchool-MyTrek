@@ -2,7 +2,10 @@
 
 {% block body %}
 
-<p class="rslt-search">Pseudo : {{ searchresult.username }}</p>
+
+{% for searchresult in searchresults %}
+	<p class="rslt-search">Pseudo : {{ searchresult.username }}</p>
+{%  endfor %}
 
 
 {% endblock %}

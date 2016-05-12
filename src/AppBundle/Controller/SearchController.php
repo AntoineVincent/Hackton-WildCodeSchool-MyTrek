@@ -18,7 +18,7 @@ class SearchController extends Controller
             $searchresult = $em->getRepository('AppBundle:User')->findByUsername($search);
         }
         return $this->render('default/search.html.twig', array(
-            'searchresult' => $searchresult,
+            'searchresults' => $searchresult,
         ));
     }
 }
