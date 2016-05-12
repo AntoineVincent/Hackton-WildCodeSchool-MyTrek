@@ -1,5 +1,8 @@
 com:
     resource: "@ComBundle/Controller/"
+
+trek:
+    resource: "@TrekBundle/Controller/"
     type:     annotation
     prefix:   /
 
@@ -26,3 +29,11 @@ user_login_check:
 user_homepage:
     path:     /
     defaults: { _controller: AppBundle:Homepage:homepage }
+
+trek:
+    path:     /trek/{niveau}
+    defaults: { _controller: TrekBundle:Trek:trek }
+
+trek_detail:
+    path:     /trek/{idTrek}
+    defaults: { _controller: AppBundle:Trek:trekDetail }
