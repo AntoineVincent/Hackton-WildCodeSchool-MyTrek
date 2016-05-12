@@ -6,6 +6,14 @@
 body {
 	background-color: #4DAF7C;
 }
+.a {
+	color: white !important;
+	text-decoration: none;
+	text-align: center;
+	margin-top: 29px;
+	border-right: solid white 1px;
+	padding-right: 5px;
+}
 li>a {
 	color: white !important;
 	text-decoration: none;
@@ -15,9 +23,6 @@ li>a {
 li>a:hover {
 	color: #833715 !important;
 	text-decoration: none;
-}
-.navbar-brand {
-	color: #833715;
 }
 .logotage {
 	height: 60px;
@@ -29,4 +34,17 @@ li>a:hover {
 }
 .title {
 	margin-top: 20px;
+	color: #833715;
+}
+.btn-primary {
+	border-radius: 10px;
+	border:transparent;
+	background-color: #833715;
+	color: white;
+}
+.btn-primary:hover {
+	border-radius: 10px;
+	border:transparent;
+	background-color: #4DAF7C;
+	color: white;
 }
