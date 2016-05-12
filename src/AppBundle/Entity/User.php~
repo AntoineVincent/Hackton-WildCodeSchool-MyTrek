@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser
-{
+{   
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -22,8 +22,13 @@ class User extends BaseUser
 
     public function __construct()
     {
+        $this->trekencours = new \Doctrine\Common\Collections\ArrayCollection();
         parent::__construct();
         // your own logic
+    }
+    public function __toString()
+    {
+        return $this->getName();
     }
     /**
      * @var string
@@ -44,9 +49,9 @@ class User extends BaseUser
      */
     private $age;
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="gender", type="string", nullable=true)
+     * @ORM\Column(name="gender", type="array", nullable=true)
      */
     private $gender;
     /**
@@ -61,10 +66,173 @@ class User extends BaseUser
      * @ORM\Column(name="exp", type="integer", nullable=true)
      */
     private $exp;
+
     /**
-     * @var array
+     * Set name
      *
-     * @ORM\Column(name="treks", type="array", nullable=true)
+     * @param string $name
+     * @return User
      */
-    private $treks;
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string 
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set age
+     *
+     * @param \DateTime $age
+     * @return User
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return \DateTime 
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return User
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set level
+     *
+     * @param integer $level
+     * @return User
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+
+        return $this;
+    }
+
+    /**
+     * Get level
+     *
+     * @return integer 
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * Set exp
+     *
+     * @param integer $exp
+     * @return User
+     */
+    public function setExp($exp)
+    {
+        $this->exp = $exp;
+
+        return $this;
+    }
+
+    /**
+     * Get exp
+     *
+     * @return integer 
+     */
+    public function getExp()
+    {
+        return $this->exp;
+    }
+
+    /**
+     * Set treks
+     *
+     * @param array $treks
+     * @return User
+     */
+    public function setTreks($treks)
+    {
+        $this->treks = $treks;
+
+        return $this;
+    }
+
+    /**
+     * Get treks
+     *
+     * @return array 
+     */
+    public function getTreks()
+    {
+        return $this->treks;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="TrekBundle\Entity\Trek", inversedBy="users")
+     * @ORM\JoinTable(name="users_treks")
+     */
+    private $trekencours;
+
+
 }

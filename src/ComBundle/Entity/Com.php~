@@ -103,27 +103,4 @@ class Com
      * @ORM\JoinColumn(name="trek_id", referencedColumnName="id")
      */
     private $trek;
-
-    /**
-     * Set trek
-     *
-     * @param \TrekBundle\Entity\Trek $trek
-     * @return Com
-     */
-    public function setTrek(\TrekBundle\Entity\Trek $trek = null)
-    {
-        $this->trek = $trek;
-
-        return $this;
-    }
-
-    /**
-     * Get trek
-     *
-     * @return \TrekBundle\Entity\Trek 
-     */
-    public function getTrek()
-    {
-        return $this->trek;
-    }
 }

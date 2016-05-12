@@ -1,0 +1,32 @@
+.navbar{
+	background-color: #2ECC71;
+	border:solid #2ECC71 1px;
+	height: 80px;
+}
+body {
+	background-color: #4DAF7C;
+}
+li>a {
+	color: white !important;
+	text-decoration: none;
+	text-align: center;
+	margin-top: 15px;
+}
+li>a:hover {
+	color: #833715 !important;
+	text-decoration: none;
+}
+.navbar-brand {
+	color: #833715;
+}
+.logotage {
+	height: 60px;
+	width: 60px;
+	float: left;
+}
+.navbar-form {
+	margin-top: 25px;
+}
+.title {
+	margin-top: 20px;
+}

@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser
-{
+{   
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -22,8 +22,13 @@ class User extends BaseUser
 
     public function __construct()
     {
+        $this->trekencours = new \Doctrine\Common\Collections\ArrayCollection();
         parent::__construct();
         // your own logic
+    }
+    public function __toString()
+    {
+        return $this->getName();
     }
     /**
      * @var string
@@ -44,9 +49,9 @@ class User extends BaseUser
      */
     private $age;
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="gender", type="string", nullable=true)
+     * @ORM\Column(name="gender", type="array", nullable=true)
      */
     private $gender;
     /**
@@ -61,12 +66,6 @@ class User extends BaseUser
      * @ORM\Column(name="exp", type="integer", nullable=true)
      */
     private $exp;
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="treks", type="array", nullable=true)
-     */
-    private $treks;
 
     /**
      * Set name
@@ -227,5 +226,46 @@ class User extends BaseUser
     public function getTreks()
     {
         return $this->treks;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="TrekBundle\Entity\Trek", inversedBy="users")
+     * @ORM\JoinTable(name="users_treks")
+     */
+    private $trekencours;
+
+
+
+    /**
+     * Add trekencours
+     *
+     * @param \TrekBundle\Entity\Trek $trekencours
+     * @return User
+     */
+    public function addTrekencour(\TrekBundle\Entity\Trek $trekencours)
+    {
+        $this->trekencours[] = $trekencours;
+
+        return $this;
+    }
+
+    /**
+     * Remove trekencours
+     *
+     * @param \TrekBundle\Entity\Trek $trekencours
+     */
+    public function removeTrekencour(\TrekBundle\Entity\Trek $trekencours)
+    {
+        $this->trekencours->removeElement($trekencours);
+    }
+
+    /**
+     * Get trekencours
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTrekencours()
+    {
+        return $this->trekencours;
     }
 }

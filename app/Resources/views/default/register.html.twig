@@ -24,11 +24,39 @@
                 </div>
 
                 <div class="col-md-12 ecart">
-                    <div class="col-md-6 a">
+                    <div class="col-md-6 ">
+                        <p class="appel">Nom :</p>
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+                </div>
+                <div class="col-md-12 ecart">
+                    <div class="col-md-6 ">
+                        <p class="appel">Prénom :</p>
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_widget(form.firstname) }}
+                        {{ form_errors(form.firstname) }}
+                    </div>
+                </div>
+                <div class="col-md-12 ecart">
+                    <div class="col-md-6 ">
                         <p class="appel">Age :</p>
                     </div>
                     <div class="col-md-6">
-                        <input type="number" name="age">
+                        {{ form_widget(form.age) }}
+                        {{ form_errors(form.age) }}
+                    </div>
+                </div>
+                <div class="col-md-12 ecart">
+                    <div class="col-md-6 ">
+                        <p class="appel">Sexe :</p>
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_widget(form.gender, { 'separator': '=====' }) }}
+                        {{ form_errors(form.gender) }}
                     </div>
                 </div>
 
