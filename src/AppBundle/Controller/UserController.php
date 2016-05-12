@@ -13,9 +13,11 @@ class UserController extends Controller
      */
     public function userAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $request = $em->getRepository('AppBundle:User')->findOneById($user->getId());
         return $this->render('default/profil.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+            'requete' => $request,
         ));
     }
 }

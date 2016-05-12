@@ -41,3 +41,4 @@ trek_detail:
 user_profil:
     path:     /user/profil
     defaults: { _controller: AppBundle:User:user }
+    defaults: { _controller: AppBundle:User:profil }
