@@ -49,9 +49,9 @@ class User extends BaseUser
      */
     private $age;
     /**
-     * @var array
+     * @var string
      *
-     * @ORM\Column(name="gender", type="array", nullable=true)
+     * @ORM\Column(name="gender", type="string", nullable=true)
      */
     private $gender;
     /**
@@ -235,4 +235,37 @@ class User extends BaseUser
     private $trekencours;
 
 
+
+    /**
+     * Add trekencours
+     *
+     * @param \TrekBundle\Entity\Trek $trekencours
+     * @return User
+     */
+    public function addTrekencour(\TrekBundle\Entity\Trek $trekencours)
+    {
+        $this->trekencours[] = $trekencours;
+
+        return $this;
+    }
+
+    /**
+     * Remove trekencours
+     *
+     * @param \TrekBundle\Entity\Trek $trekencours
+     */
+    public function removeTrekencour(\TrekBundle\Entity\Trek $trekencours)
+    {
+        $this->trekencours->removeElement($trekencours);
+    }
+
+    /**
+     * Get trekencours
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTrekencours()
+    {
+        return $this->trekencours;
+    }
 }

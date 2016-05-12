@@ -49,9 +49,9 @@ class User extends BaseUser
      */
     private $age;
     /**
-     * @var array
+     * @var string
      *
-     * @ORM\Column(name="gender", type="array", nullable=true)
+     * @ORM\Column(name="gender", type="string", nullable=true)
      */
     private $gender;
     /**
