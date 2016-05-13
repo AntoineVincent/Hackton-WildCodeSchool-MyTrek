@@ -45,3 +45,7 @@ user_profil:
 function_search:
     path:    /search
     defaults: { _controller: AppBundle:Search:search }
+
+user_modif:
+    path:   /user/profil/user_modif
+    defaults: { _controller: AppBundle:Profilmodif:profilmodif}

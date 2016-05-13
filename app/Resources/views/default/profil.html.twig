@@ -3,8 +3,32 @@
 {% block body %}
 <div class="container">
     <div class="row">
-        <div id="fond_profil" class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-xs-10 ">
-            <h4><span class="">Prenom :</span> {{ requete.firstname }}</h4>
+        <div class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-xs-10 fond_profil">
+        	<div class="col-md-12">
+        		<h3 class="profil-title">Profil de {{ requete.username }}</h3>
+        	</div>
+        	<div class="col-md-6"></div>
+        	<div class="col-md-6">
+	            <h4><span class="">Nom :</span> {{ requete.name }}</h4>
+	            <hr>
+	            <h4><span class="">Prenom :</span> {{ requete.firstname }}</h4>
+	            <hr>
+	            <h4><span class="">Date de naissance :</span> {{ requete.age|date('d-m-Y') }}</h4>
+	            <hr>
+	            <h4><span class="">Sexe :</span> {{ requete.gender }}</h4>
+	            <hr>
+	            <h4><span class="">Level :</span> {{ requete.level }}</h4>
+	            <hr>
+	            <h4><span class="">Exp :</span> {{ requete.exp }}</h4>
+	            <hr>
+	            <div class="col-md-12">
+	            	<div class="col-md-4"></div>
+	            	<div class="col-md-4">
+	        			<a class="btn btn-primary btn-espace" href="{{ path ('user_modif') }}" role="button">Modifier votre profil</a>
+	        		</div>
+	        	<div class="col-md-4"></div>
+	        	</div>
+	        </div>
         </div>
     </div>
 </div>

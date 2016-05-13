@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ent_espace"><h3><b>{{ app.user.username }}</b>, vous pouvez modifier vos informations ici.</h3></div>
+            <div class="col-md-12">
+                <div class="col-md-6 form_espace">
+                    <form action="{{ path("user_modif") }}" method="post" class="espace_modif">
+                        <div class="col-md-12">
+                            <label for="nom">Nom :</label>
+                            <input type="string" id="nom" name="nom" value="{{ requete.name }}"/>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="prenom">Prenom :</label>
+                            <input type="string" id="prenom" name="prenom" value="{{ requete.firstname }}"/>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="email">Email :</label>
+                            <input type="string" id="email" name="email" value="{{ requete.email }}"/>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="hidden" name="hidden" value="1"/>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-primary" id="_submit" name="submit" value="Envoyer" />
+                        </div>
+                        <div class="col-md-12 return">
+                            <a href="{{ path ("user_profil") }}">Retour</a>
+                        </div>
+                    </form>
+                </div>   
+        </div>
+    </div>
+</div>
+{% endblock %}
