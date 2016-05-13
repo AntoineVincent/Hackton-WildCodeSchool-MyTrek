@@ -1,32 +1,38 @@
 .navbar{
-	background-color: #2ECC71;
-	border:solid #2ECC71 1px;
+	background-color:#2ECC71;
+	border-bottom:solid black 2px;
 	height: 80px;
 }
 body {
-	background-color: #4DAF7C;
+	min-height:650px;
+	background:url(../img/bcg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
 .a {
-	color: white !important;
+	color: black !important;
 	text-decoration: none;
 	text-align: center;
-	margin-top: 29px;
+	margin-top: 23px;
 	border-right: solid white 1px;
 	padding-right: 5px;
+	font-size:22px;
 }
 li>a {
-	color: white !important;
+	color: black !important;
 	text-decoration: none;
 	text-align: center;
 	margin-top: 15px;
+	font-size:22px;
 }
 li>a:hover {
-	color: #833715 !important;
+	color: white !important;
 	text-decoration: none;
+	font-size:22px;
 }
 .logotage {
-	height: 60px;
-	width: 60px;
+	height: 90px;
+	width: 90px;
 	float: left;
 }
 .navbar-form {
@@ -38,19 +44,48 @@ li>a:hover {
 .btn-primary {
 	border-radius: 10px;
 	border:transparent;
-	background-color: #833715;
+	background-color: black;
 	color: white;
 }
 .btn-primary:hover {
 	border-radius: 10px;
 	border:transparent;
-	background-color: #4DAF7C;
-	color: white;
+	background-color: white;
+	color: black;
 }
-
-#fond_profil {
-	height: 400px;
-	background: white;
+.fond_profil {
+	background-color: #2ECC71;
 	box-shadow: 8px 8px 15px black;
-	color: #833715;
+	color: black;
+	border-radius: 5px;
+	padding-bottom: 10px;
+}
+.levelink {
+	height: 150px;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 15px;
+	border: solid #2ECC71 1px;
+	margin-top: 5px;
+}
+.leveltitle {
+	color: #2ECC71;
+	text-align: center;
+}
+.profil-title {
+	text-align: center;
+}
+.toologo {
+	height: 79px;
+	width: 80px;
+	background: url(../img/treklogo.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.toologoo {
+	height: 79px;
+	width: 80px;
+	background: url(../img/velo.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	float:left;
 }

@@ -49,3 +49,8 @@ function_search:
 trek_testmap:
     path:     /trek/map
     defaults: { _controller: TrekBundle:Trek:map }
+
+user_modif:
+    path:   /user/profil/user_modif
+    defaults: { _controller: AppBundle:Profilmodif:profilmodif}
+

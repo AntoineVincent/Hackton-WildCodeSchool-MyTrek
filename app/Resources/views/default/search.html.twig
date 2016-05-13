@@ -4,7 +4,13 @@
 
 
 {% for searchresult in searchresults %}
-	<p class="rslt-search">Pseudo : {{ searchresult.username }}</p>
+	<div class="col-md-12">
+		<div class="col-md-2"></div>
+		<div class="col-md-8" style="text-align:center;background-color:white">
+			<p class="rslt-search">Pseudo : {{ searchresult.username }}</p>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
 {%  endfor %}
 
 
