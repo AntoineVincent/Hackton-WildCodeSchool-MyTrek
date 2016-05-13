@@ -2,7 +2,157 @@
 
 {% block body %}
 
-<div class="col-md-1"></div>
+	<h1 class="trekfichetitle">Fiche Technique du Trek : {{ treks.nom }} </h1>
+
+<div class="col-md-12">
+	<div class="col-md-1"></div>
+	<div class="col-md-10 treklist">
+		    <div id= "debug" class="container-fluid">
+    			<div id="data">
+           		</div>
+
+    			<div id="message">
+    			</div>
+			</div>
+		<div class="container-fluid">
+	    	<article id="Weather">
+	        	<section id="heading" class="row">
+	            	<h1 class="text-center">Météo</h1>
+	            	<h3 class="text-center" id="town">Town Name</h3>
+	        	</section>
+	        	<section id="currentWeather" class="row">
+	            	<div class="col-md-4 text-center">
+	                	<i class="img-responsive iconCurrent" id="currentIcon"></i>
+	                	<h4 id="currentConditions">Current Conditions</h4>
+	            	</div>
+
+	            	<div class="col-md-4 text-center">
+	                	<div id="currentTemperature">Temperature</div>
+	                	<br>
+	                	<div id="units">
+	                    	&deg;C
+	                    	<div class="inner">
+	                        	<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="unitToggle">
+	                            <input checked class="mdl-switch__input" id="unitToggle" onclick="unitChange()" type="checkbox">
+	                        	</label>
+	                    	</div>
+	                    	&deg;F
+	                	</div>
+	            	</div>
+		            <div class="col-md-4 text-center">
+		                <div id="wind" class="x-5">
+		                    <span><i class="wi wi-strong-wind"></i></span>
+		                    <span id="windSpeed">Wind Speed</span>
+		                </div>
+		                <div class="x-5">
+		                    <span><i class="wi wi-strong-wind"></i></span>
+		                    <span><i id="windDirection" class="wi wi-wind-direction"></i></span>
+		                </div>
+		                <div class="x-5">
+		                    <span><i class="wi wi-humidity"></i></span>
+		                    <span id="humidity">Humidity</span>
+		                </div>
+		            </div>
+				</section>
+		        <section id="forecast" class="row text-center">
+		            <div class = "col-md-1"></div>
+		            <div class = "col-md-2 col-sm-6 day">
+		                <div class="x-2 height-adjust" id="day0"></div>
+		                <i id="icon0" class="img-responsive iconForecast"></i>
+		                <div id="max-temp0" class = "x-2"></div>
+		                <div id="min-temp0" class = "x-2"></div>
+		                <div id="wind0">
+		                    <i class= "iconWind wi wi-strong-wind"></i>
+		                    <span id="windSpeed0" class = "x-2 icon-margin"></span>
+		                </div>
+		                <div id="humidity0">
+		                    <i class="iconHumidity wi wi-humidity"></i>
+		                    <span id="humidityPercent0" class = "x-2 icon-margin"></span>
+		                </div>
+		            </div>
+		            <div class = "col-md-2 col-sm-6 day">
+		                <div class="x-2 height-adjust" id="day1"></div>
+		                <i id="icon1" class="img-responsive iconForecast"></i>
+		                <div id="max-temp1" class = "x-2"></div>
+		                <div id="min-temp1" class = "x-2"></div>
+		                <div id="wind1">
+		                    <i class= "iconWind wi wi-strong-wind"></i>
+		                    <span id="windSpeed1"class = "x-2 icon-margin"></span>
+		                </div>
+		                <div id="humidity1">
+		                    <i class="iconHumidity wi wi-humidity"></i>
+		                    <span id="humidityPercent1" class = "x-2 icon-margin"></span>
+		                </div>
+		            </div>
+		              <div class = "col-md-2 col-sm-6 day">
+		                <div class="x-2 height-adjust" id="day2"></div>
+		                <i id="icon2" class="img-responsive iconForecast"></i>
+		                <div id="max-temp2" class = "x-2"></div>
+		                <div id="min-temp2" class = "x-2"></div>
+		                <div id="wind2">
+		                    <i class= "iconWind wi wi-strong-wind"></i>
+		                    <span id="windSpeed2"class = "x-2 icon-margin"></span>
+		                </div>
+		                <div id="humidity2">
+		                    <i class="iconHumidity wi wi-humidity"></i>
+		                    <span id="humidityPercent2" class = "x-2 icon-margin"></span>
+		                </div>
+		            </div>
+		            <div class = "col-md-2 col-sm-6 day">
+		                <div class="x-2 height-adjust" id="day3"></div>
+		                <i id="icon3" class="img-responsive iconForecast"></i>
+		                <div id="max-temp3" class = "x-2"></div>
+		                <div id="min-temp3" class = "x-2"></div>
+		                <div id="wind3">
+		                    <i class= "iconWind wi wi-strong-wind"></i>
+		                    <span id="windSpeed3"class = "x-2 icon-margin"></span>
+		                </div>
+		                <div id="humidity3">
+		                    <i class="iconHumidity wi wi-humidity"></i>
+		                    <span id="humidityPercent3"  class = "x-2 icon-margin"></span>
+		                </div>
+		            </div>
+		            <div class = "col-md-2 col-sm-12 day">
+		                <div class="x-2 height-adjust" id="day4"></div>
+		                <i id="icon4"  class="img-responsive iconForecast"></i>
+		                <div id="max-temp4" class = "x-2"></div>
+		                <div id="min-temp4" class = "x-2"></div>
+		                <div id="wind4">
+		                    <i class= "iconWind wi wi-strong-wind"></i>
+		                    <span id="windSpeed4"class = "x-2 icon-margin"></span>
+		                </div>
+		                <div id="humidity4">
+		                    <i class="iconHumidity wi wi-humidity"></i>
+		                    <span id="humidityPercent4" class = "x-2 icon-margin"></span>
+		                </div>
+		            </div>
+
+		            <div class = "col-md-1 day"></div>
+		        </section>
+
+	{% if treks.id == "6" %}
+		<script src="{{ asset('js/test1.js') }}"></script>
+	{% elseif treks.id == "7" %}
+	<script src="{{ asset('js/test2.js') }}"></script>
+	{% elseif treks.id == "8" %}
+		<script src="{{ asset('js/test3.js') }}"></script>
+	{% elseif treks.id == "9" %}
+	<script src="{{ asset('js/test4.js') }}"></script>
+	{% elseif treks.id == "10" %}
+		<script src="{{ asset('js/test5.js') }}"></script>
+	{% elseif treks.id == "11" %}
+		<script src="{{ asset('js/test6.js') }}"></script>
+	{% else %}	
+	{% endif %}
+	           
+	        	<div class="col-md-1"></div>
+	    	</article>
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>
+
+<div class="col-md-2"></div>
 <div class="col-md-10">	
 	<div class="col-md-12">
 		<div id="map" style="height:250px; width:800px"></div>
@@ -24,7 +174,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHW8RuM2GARduKFEHWK-yItzoWymc81CU&signed_in=true&callback=initMap" async defer></script>
 	</div>
 
-	<div class="col-md-9 treklist">
+	<div class="col-md-9 treklist margetrek">
 		<div class="col-md-12">
 			<h4>Nom: {{ treks.nom }}</h4>
 		</div>

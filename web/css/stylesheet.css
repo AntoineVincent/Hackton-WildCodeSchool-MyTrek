@@ -95,3 +95,10 @@ li>a:hover {
 	padding: 5px 5px 0 5px;
 	color: white;
 }
+.margetrek {
+	margin-top: -30px;
+}
+.trekfichetitle{
+	color: white;
+	text-align: center;
+}
