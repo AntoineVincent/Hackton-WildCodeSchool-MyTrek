@@ -34,9 +34,7 @@ user_homepage:
 #     path:     /trek/{niveau}
 #     defaults: { _controller: TrekBundle:Trek:trek }
 
-trek_detail:
-    path:     /trek/{idTrek}
-    defaults: { _controller: AppBundle:Trek:trekDetail }
+
 
 user_profil:
     path:     /user/profil
@@ -54,3 +52,14 @@ user_modif:
     path:   /user/profil/user_modif
     defaults: { _controller: AppBundle:Profilmodif:profilmodif}
 
+trek_create:
+    path:    /trek/create
+    defaults: { _controller: TrekBundle:Trek:create}
+
+trek_list:
+    path:    /trek/{niveau}
+    defaults: { _controller: TrekBundle:Trek:list}
+
+trek_show:
+    path:    /trek/show/{trekid}
+    defaults: { _controller: TrekBundle:Trek:show}

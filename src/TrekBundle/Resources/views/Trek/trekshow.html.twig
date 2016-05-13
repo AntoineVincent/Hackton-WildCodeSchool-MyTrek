@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="col-md-1"></div>
+<div class="col-md-10">	
+	<div class="col-md-12">
+		<div id="map" style="height:250px; width:800px"></div>
+		<div id="elevation_chart" style="height:250px; width:800px"></div>
+		{% if treks.id == "6" %}
+	 		<script src="{{ asset('js/pedestre_difficile_tourDuMontBlanc.js') }}"></script>        	
+	 	{% elseif treks.id == "7" %}
+			<script src="{{ asset('js/pedestre_facile_corridaDeLuce2007.js') }}"></script>
+	 	{% elseif treks.id == "8" %}
+	 		<script src="{{ asset('js/pedestre_intermediaire_colDuCalvaire.js') }}"></script>
+	 	{% elseif treks.id == "9" %}
+			<script src="{{ asset('js/velo_facile_FontaineLaGuyon.js') }}"></script>
+	 	{% elseif treks.id == "10" %}
+	 		<script src="{{ asset('js/velo_facile_StAndreDesEaux.js') }}"></script>
+	 	{% elseif treks.id == "11" %}
+	 		<script src="{{ asset('js/velo_intermediaire_ceyresteLaCiotat.js') }}"></script>
+	 	{% else %}	
+	 	{% endif %}
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHW8RuM2GARduKFEHWK-yItzoWymc81CU&signed_in=true&callback=initMap" async defer></script>
+	</div>
+
+	<div class="col-md-9 treklist">
+		<div class="col-md-12">
+			<h4>Nom: {{ treks.nom }}</h4>
+		</div>
+		<div class="col-md-12">
+			<h4>Lieu: {{ treks.region }}</h4>
+		</div>
+		<div class="col-md-12">
+			<h4>Niveau: {{ treks.niveau }}</h4>
+		</div>
+		<div class="col-md-12">
+			<h4>Locomotion: {{ treks.locomotion }}</h4>
+		</div>
+	</div>
+</div>
+<div class="col-md-1"></div>
+
+
+{% endblock %}

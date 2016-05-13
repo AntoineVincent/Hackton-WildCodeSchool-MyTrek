@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	{{ form_start(form) }}
+            <div class="col-md-12 destinataire"> 
+                <div class="col-md-12"> 
+                <strong>Nom:</strong> 
+                </div> 
+                <div class="col-md-12"> 
+                    {{ form_widget(form.nom) }} 
+                    {{ form_errors(form.nom) }} 
+                </div>
+            </div>
+            <div class="col-md-12 votremessage"> 
+                <div class="col-md-12"> 
+                <strong>Region:</strong> 
+                </div> 
+                <div class="col-md-12"> 
+                    {{ form_widget(form.region) }} 
+                    {{ form_errors(form.region) }} 
+                </div>
+            </div> 
+            <div class="col-md-12 votremessage"> 
+                <div class="col-md-12"> 
+                <strong>Niveau:</strong> 
+                </div> 
+                <div class="col-md-12"> 
+                    {{ form_widget(form.niveau) }} 
+                    {{ form_errors(form.niveau) }} 
+                </div>
+            </div> 
+            <div class="col-md-12 votremessage"> 
+                <div class="col-md-12"> 
+                <strong>Locomotion:</strong> 
+                </div> 
+                <div class="col-md-12"> 
+                    {{ form_widget(form.locomotion) }} 
+                    {{ form_errors(form.locomotion) }} 
+                </div>
+            </div> 
+
+            <div class="col-md-12 register-but">
+                <input type="submit" value="Envoyer" />
+            </div>
+    {{ form_end(form) }} 
+</div>
+<div class="col-md-1">
+{% endblock %}

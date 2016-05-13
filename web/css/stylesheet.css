@@ -81,11 +81,17 @@ li>a:hover {
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
-.toologoo {
-	height: 79px;
-	width: 80px;
-	background: url(../img/velo.png);
-	background-size: 100%;
-	background-repeat: no-repeat;
-	float:left;
+.treklist {
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 15px;
+	border: solid #2ECC71 1px;
+	margin:5px;
+	color: #2ECC71;
+}
+.accestrek {
+	background-color: black;
+	border: solid #2ECC71 1px;
+	border-radius: 5px;
+	padding: 5px 5px 0 5px;
+	color: white;
 }
